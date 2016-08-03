@@ -1,0 +1,2 @@
+module RssUrlsHelper
+end
