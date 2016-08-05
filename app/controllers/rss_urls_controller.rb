@@ -1,5 +1,9 @@
+require 'open-uri'
+
 class RssUrlsController < ApplicationController
-  before_action :set_rss_url, only: [:show, :edit, :update, :destroy]
+  before_action :set_rss_url,
+                only: [:show, :edit, :update, :destroy],
+                except: [:parse_rss]
 
   # GET /rss_urls
   # GET /rss_urls.json
@@ -59,6 +63,11 @@ class RssUrlsController < ApplicationController
       format.html { redirect_to rss_urls_url, notice: 'Rss url was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def parse_rss
+    @feeds = Feed.parse_urls
+    render json: @feeds
   end
 
   private
