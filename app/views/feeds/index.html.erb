@@ -2,13 +2,13 @@
 
 <h1>Listing Feeds</h1>
 
-<table>
+<table border="1" class="table table-striped .table-bordered table-responsive">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Url</th>
       <th>Content</th>
-      <th>Publish date</th>
+      <th class="hidden-sm hidden-xs">Url</th>
+      <th class="hidden-sm hidden-xs">Publish date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,8 +18,8 @@
       <tr>
         <td><%= value[:title] %></td>
         <td><%= value[:description] %></td>
-        <td><%= value[:link] %></td>
-        <td><%= value[:pubDate] %></td>
+        <td class="hidden-sm hidden-xs"><%= value[:link] %></td>
+        <td class="hidden-sm hidden-xs"><%= value[:pubDate] %></td>
         <!--<td>< %= link_to 'Show', "/feeds/#{URI.encode key}" %></td> -->
       </tr>
     <% end %>
