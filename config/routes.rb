@@ -5,6 +5,8 @@ Rails.application.routes.draw do
       get 'parse_rss'
     end
   end
+  root 'rss_urls#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
