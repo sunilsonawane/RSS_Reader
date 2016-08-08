@@ -5,6 +5,7 @@ class FeedsController < ApplicationController
   # GET /feeds.json
   def index
     @feeds = $cache.get('rss_feeds')
+    @feeds = Feed.sort_feeds_by_attrib(@feeds, :pubDate)
   end
 
   # GET /feeds/1

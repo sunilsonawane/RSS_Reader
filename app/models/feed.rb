@@ -31,7 +31,11 @@ class Feed
   end
 
   def self.get_feeds_from_cache
-     $cache.get('rss_feeds')
+     $cache.get('rss_feeds') || {}
+  end
+
+  def self.sort_feeds_by_attrib(feeds, attrb)
+    feeds.sort_by{|k, v| DateTime.parse(v[attrb])}.reverse
   end
 
 end
