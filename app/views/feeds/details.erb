@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Feed Details</h1>
+
+<table border="1" class="table table-striped .table-bordered table-responsive">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+      <th class="hidden-sm hidden-xs">Url</th>
+      <th class="hidden-sm hidden-xs">Publish date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td><%= @feed[:title] %></td>
+      <td><%= @feed[:description] %></td>
+      <td class="hidden-sm hidden-xs"><%= @feed[:link] %></td>
+      <td class="hidden-sm hidden-xs"><%= @feed[:pubDate] %></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<%= link_to 'Back', feeds_path %>

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :feeds
+  resources :feeds do
+    collection do
+      get 'details'
+    end
+  end
   resources :rss_urls do
     collection do
       get 'parse_rss'
